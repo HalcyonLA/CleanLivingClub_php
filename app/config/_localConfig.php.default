@@ -1,0 +1,15 @@
+<?php
+/**
+ * @author Aleksandr Mokhonko
+ * Date: 03.02.16
+ */
+ const DB_PORT 		= '3306'; //3306-4040
+ const DB_HOST 		= '127.0.0.1'; //3306-4040
+ const DB_NAME 		= 'clean';
+ const DB_USER 		= 'root';
+ const DB_PASSWORD 	= '1q2w3e4r5t6y';
+
+ const PASS_SALT    = '5034503594d631a9';
+// const HOSTNAME     = 'dev.mytimebot.com';
+// const DOMAIN       = 'dev.mytimebot.com';
+// const DOMAIN_FULL  = 'https://dev.mytimebot.com';
