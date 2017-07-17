@@ -46,8 +46,8 @@ $config = [
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.gmail.com',
-                'username' => 'halcyon.test@gmail.com',
-                'password' => 'h@lcy0n7',
+                'username' => 'hclmaxim@gmail.com',
+                'password' => 'Max163359157',
                 'port' => '587',
                 'encryption' => 'tls',
             ],
