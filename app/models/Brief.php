@@ -8,6 +8,8 @@ use Yii;
  * This is the model class for table "{{%brief}}".
  *
  * @property integer $id
+ * @property string $email
+ * @property string $phone
  * @property integer $userId
  * @property string $startMealDeliveryDate
  * @property string $mealDeliveryAddress
@@ -51,8 +53,10 @@ class Brief extends \yii\db\ActiveRecord
             [['startMealDeliveryDate', 'mealDeliveryAddress', 'buildingEnterInstructions', 'foodAllergies',
 	            'medications', 'healthGoals', 'weightLossGoal', 'height', 'weight', 'age', 'energyGoals',
 	            'beautyGoals', 'smthAbBeautyGoals', 'favoriteBreakfasts', 'favoriteLunches', 'favoriteSoups',
-	            'favoriteSalads', 'favoriteSweetSnacks', 'favoriteSalSpSnacks'], 'required'],
+	            'favoriteSalads', 'favoriteSweetSnacks', 'favoriteSalSpSnacks', 'email', 'phone'], 'required'],
             [['startMealDeliveryDate', 'created'], 'safe'],
+            [['email'], 'email'],
+            [['phone'], 'phone'],
             [['mealDeliveryAddress', 'buildingEnterInstructions', 'foodAllergies', 'medications', 'healthGoals',
 	            'weightLossGoal', 'energyGoals', 'beautyGoals', 'smthAbBeautyGoals', 'favoriteBreakfasts',
 	            'favoriteLunches', 'favoriteSoups', 'favoriteSalads', 'favoriteSweetSnacks',
@@ -68,6 +72,8 @@ class Brief extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'email' => 'Email',
+            'phone' => 'Phone',
             'userId' => 'User ID',
             'startMealDeliveryDate' => 'Start Meal Delivery Date',
             'mealDeliveryAddress' => 'Meal Delivery Address',
