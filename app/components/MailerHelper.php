@@ -66,9 +66,10 @@ class MailerHelper extends Component
 		$this->toMail = $toMail;
 		$this->data = $data;
 		$this->typeLetter = $typeLetter;
+		$this->subject = self::$defaultSubject[$typeLetter];
 
 		$this->_setViewPath();
-		$this->_setSubject();
+//		$this->_setSubject();
 		$this->_setBody();
 		$this->_setType();
 
