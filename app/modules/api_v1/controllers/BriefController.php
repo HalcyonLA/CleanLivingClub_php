@@ -70,11 +70,7 @@ class BriefController extends ApiController
 		}
 		$item->save();
 		if ($item->sendToEmail == 1) {
-			try {
-				$item->sendToEmail();
-			} catch (Exception $e) {
-
-			}
+			$item->sendToEmail();
 		}
 
 		$this->_jsonResponse['status'] = 'ok';

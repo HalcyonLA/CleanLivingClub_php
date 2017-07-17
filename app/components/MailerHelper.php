@@ -8,6 +8,7 @@ namespace app\components;
 
 use Yii;
 use yii\base\Component;
+use yii\db\Exception;
 
 /**
  * Class Mail
@@ -94,7 +95,13 @@ class MailerHelper extends Component
 			$mail->setTextBody($this->body);
 		}
 
-		return $mail->send();
+		try {
+			return $mail->send();
+		} catch (Exception $e) {
+			return $e;
+		}
+
+
 	}
 
 	/**
