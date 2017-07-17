@@ -35,10 +35,10 @@ class BriefController extends ApiController
 	public function behaviors()
 	{
 		return [
-			'authenticate' => [
-				'class' => 'app\modules\api_v1\filters\AuthenticateFilter',
-			    'only' => [],
-			]
+//			'authenticate' => [
+//				'class' => 'app\modules\api_v1\filters\AuthenticateFilter',
+//			    'only' => [],
+//			]
 		];
 	}
 
