@@ -107,6 +107,7 @@ class UsersController extends ApiController
 		return [
 			self::OBJECT_PARAMS => [
 				'email' 	        	=> ['halcyon.third@gmail.com', true],
+				'phone' 	        	=> ['+380679999999', true],
 				'password' 			=> ['123456789', true],
 				'firstName' 	    	=> ['Test', true],
 				'lastName' 	        => ['User1', true],
@@ -138,7 +139,7 @@ class UsersController extends ApiController
 
 			if($loginForm->validate() && $loginForm->login('email')) {
 				$this->_jsonResponse['status'] = 'ok';
-				$this->_jsonResponse['data'] = Yii::$app->pathTransformer->transform($loginForm->userInfo->getAttributes(), ['photo', 'photo_thumbnail']);
+				$this->_jsonResponse['data'] = Yii::$app->pathTransformer->transform($loginForm->userInfo->getAttributes(), ['photo', 'photoThumbnail']);
 				return;
 			}
 			else {
@@ -296,7 +297,7 @@ class UsersController extends ApiController
 			/** @var Users $user */
 			$user = Yii::$app->user->getIdentity();
 			$this->_jsonResponse['status'] = 'ok';
-			$this->_jsonResponse['data'] = Yii::$app->pathTransformer->transform($user->getAttributes(), ['photo', 'photo_thumbnail']);
+			$this->_jsonResponse['data'] = Yii::$app->pathTransformer->transform($user->getAttributes(), ['photo', 'photoThumbnail']);
 		}
 		else {
 			$this->_handlerErrors($loginForm);

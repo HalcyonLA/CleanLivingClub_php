@@ -15,6 +15,7 @@ use yii\web\IdentityInterface;
  * @property string $email
  * @property string $password
  * @property string $facebookId
+ * @property string $phone
  * @property string $firstName
  * @property string $lastName
  * @property string $photo
@@ -89,8 +90,9 @@ class Users extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['email', 'password'], 'required', 'except' => ['facebookLogin', 'facebookUpdate', 'update']],
+            [['email', 'password', 'phone'], 'required', 'on' => 'create', 'except' => ['facebookLogin', 'facebookUpdate', 'update']],
             [['facebookToken'], 'required', 'on' => 'facebookLogin'],
+            [['phone'], 'phone'],
             [['createAt'], 'safe'],
             [['status'], 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
             [['status'], 'default', 'value' => self::STATUS_ACTIVE],
