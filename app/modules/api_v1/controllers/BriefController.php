@@ -9,6 +9,7 @@ namespace app\modules\api_v1\controllers;
 use app\models\Brief;
 use Yii;
 use app\components\ApiController;
+use yii\db\Exception;
 
 class BriefController extends ApiController
 {
@@ -69,7 +70,11 @@ class BriefController extends ApiController
 		}
 		$item->save();
 		if ($item->sendToEmail == 1) {
-			$item->sendToEmail();
+			try {
+				$item->sendToEmail();
+			} catch (Exception $e) {
+
+			}
 		}
 
 		$this->_jsonResponse['status'] = 'ok';
