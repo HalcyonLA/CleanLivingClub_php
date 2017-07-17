@@ -2,10 +2,10 @@
 require_once __DIR__ . '/_localConfig.php';
 
 $config = [
-    'id' => 'TimeBot',
+    'id' => 'CleanLivingClub',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'name' => 'TimeBot',
+    'name' => 'CleanLivingClub',
 
     'modules' => [
         'apiVersion1' => [
