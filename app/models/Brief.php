@@ -10,6 +10,7 @@ use Yii;
  * @property integer $id
  * @property string $email
  * @property string $phone
+ * @property string $name
  * @property integer $userId
  * @property string $startMealDeliveryDate
  * @property string $mealDeliveryAddress
@@ -53,14 +54,14 @@ class Brief extends \yii\db\ActiveRecord
             [['startMealDeliveryDate', 'mealDeliveryAddress', 'buildingEnterInstructions', 'foodAllergies',
 	            'medications', 'healthGoals', 'weightLossGoal', 'height', 'weight', 'age', 'energyGoals',
 	            'beautyGoals', 'smthAbBeautyGoals', 'favoriteBreakfasts', 'favoriteLunches', 'favoriteSoups',
-	            'favoriteSalads', 'favoriteSweetSnacks', 'favoriteSalSpSnacks', 'email', 'phone'], 'required'],
+	            'favoriteSalads', 'favoriteSweetSnacks', 'favoriteSalSpSnacks', 'email', 'phone', 'name'], 'required'],
             [['startMealDeliveryDate', 'created'], 'safe'],
             [['email'], 'email'],
             [['phone'], 'phone'],
             [['mealDeliveryAddress', 'buildingEnterInstructions', 'foodAllergies', 'medications', 'healthGoals',
 	            'weightLossGoal', 'energyGoals', 'beautyGoals', 'smthAbBeautyGoals', 'favoriteBreakfasts',
 	            'favoriteLunches', 'favoriteSoups', 'favoriteSalads', 'favoriteSweetSnacks',
-	            'favoriteSalSpSnacks'], 'string'],
+	            'favoriteSalSpSnacks', 'name'], 'string'],
             [['height', 'weight', 'age'], 'string', 'max' => 100],
         ];
     }
@@ -74,6 +75,7 @@ class Brief extends \yii\db\ActiveRecord
             'id' => 'ID',
             'email' => 'Email',
             'phone' => 'Phone',
+            'name' => 'Name',
             'userId' => 'User ID',
             'startMealDeliveryDate' => 'Start Meal Delivery Date',
             'mealDeliveryAddress' => 'Meal Delivery Address',

@@ -50,6 +50,7 @@ class BriefController extends ApiController
             self::OBJECT_PARAMS => [
 	            'email' => ['', true],
 	            'phone' => ['', true],
+	            'name' => ['', true],
 	            'startMealDeliveryDate' => ['2017-08-16 00:00:00', true],
 	            'mealDeliveryAddress' => ['14', true],
 	            'buildingEnterInstructions' => ['14', true],
