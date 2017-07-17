@@ -27,6 +27,7 @@ use yii\base\Component;
 class MailerHelper extends Component
 {
 	const TYPE_REPORT_IMAGE 	    = 'report-image';
+	const TYPE_FORM_ECHO 	        = 'form-echo';
 
 	public $fromMail;
 	public $toMail;
@@ -41,11 +42,13 @@ class MailerHelper extends Component
 	private $_viewPath;
 
 	public static $defaultSubject = [
-			self::TYPE_REPORT_IMAGE 	=> 'Report Image'
+			self::TYPE_REPORT_IMAGE 	=> 'Report Image',
+			self::TYPE_FORM_ECHO 	    => 'Your answers from CleanLivingClub',
 	];
 
 	public static $defaultTemplates = [
 			self::TYPE_REPORT_IMAGE 	=> 'reportImage.php',
+			self::TYPE_FORM_ECHO 	    => 'echoForm.php',
 	];
 
     /**
@@ -162,6 +165,7 @@ class MailerHelper extends Component
 		else {
 			$data = $_data_;
 		}
+		$data = $_data_;
 
 		if ($_return_) {
 			ob_start();

@@ -7,26 +7,8 @@
 namespace app\modules\api_v1\controllers;
 
 use app\models\Brief;
-use app\models\DeviceTokens;
-use app\models\LoginForm;
-use app\models\Messages;
-use app\models\ParticipantsChats;
-use app\models\query\FriendsRelations;
-use app\models\FriendsRelations as FriendsModel;
-use app\models\UsersPushSettings;
 use Yii;
 use app\components\ApiController;
-use yii\base\Exception;
-use yii\helpers\Url;
-use app\controllers;
-use app\models\Users;
-use app\models\query\Users as UsersQuery;
-use yii\helpers\VarDumper;
-
-use Jose\Factory\JWKFactory;
-use Jose\Loader;
-use \Firebase\JWT\JWT;
-
 
 class BriefController extends ApiController
 {
@@ -86,6 +68,9 @@ class BriefController extends ApiController
 			return;
 		}
 		$item->save();
+		if ($item->sendToEmail == 1) {
+			$item->sendToEmail();
+		}
 
 		$this->_jsonResponse['status'] = 'ok';
 		$this->_jsonResponse['data'] = $item->getAttributes();
