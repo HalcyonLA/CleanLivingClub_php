@@ -37,9 +37,7 @@ class BriefController extends ApiController
 		return [
 			'authenticate' => [
 				'class' => 'app\modules\api_v1\filters\AuthenticateFilter',
-			    'only' => [
-						'fill',
-				],
+			    'only' => [],
 			]
 		];
 	}
@@ -63,6 +61,7 @@ class BriefController extends ApiController
 	            'age' => ['14', true],
 	            'energyGoals' => ['14', true],
 	            'beautyGoals' => ['14', true],
+	            'smthAbEnergyGoals' => ['14', true],
 	            'smthAbBeautyGoals' => ['14', true],
 	            'favoriteBreakfasts' => ['14', true],
 	            'favoriteLunches' => ['14', true],
@@ -71,6 +70,7 @@ class BriefController extends ApiController
 	            'favoriteSweetSnacks' => ['14', true],
 	            'favoriteSalSpSnacks' => ['14', true],
 	            'payDeposit' => ['0', true, '0 or 1'],
+	            'sendToEmail' => ['0', true, '0 or 1'],
             ]
         ];
     }
