@@ -167,7 +167,7 @@ class MailerHelper extends Component
 			$data = $_data_;
 		}
 		$data = $_data_;
-		$data['subject'] = $this->subject;
+		$subject = $this->subject;
 
 		if ($_return_) {
 			ob_start();
