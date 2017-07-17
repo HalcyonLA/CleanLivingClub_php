@@ -61,7 +61,7 @@ class Brief extends \yii\db\ActiveRecord
             [['email'], 'email'],
             [['sendToEmail', 'payDeposit'], 'in', 'range' => [0, 1]],
             [['sendToEmail', 'payDeposit'], 'default', 'value' => 0],
-            [['phone'], 'phone'],
+            [['phone'], 'string'],
             [['mealDeliveryAddress', 'buildingEnterInstructions', 'foodAllergies', 'medications', 'healthGoals',
 	            'weightLossGoal', 'energyGoals', 'beautyGoals', 'smthAbBeautyGoals', 'favoriteBreakfasts',
 	            'favoriteLunches', 'favoriteSoups', 'favoriteSalads', 'favoriteSweetSnacks',
