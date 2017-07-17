@@ -79,7 +79,7 @@ class BriefController extends ApiController
     {
 		$item = new Brief();
 		$item->setAttributes($this->_jsonRequest);
-		$item->userId = Yii::$app->user->getIdentity()->getId();
+//		$item->userId = Yii::$app->user->getIdentity()->getId();
 
 		if (!$item->validate()) {
 			$this->_handlerErrors($item);
