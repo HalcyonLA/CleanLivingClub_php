@@ -74,6 +74,7 @@ class BriefController extends ApiController
 			if ($result instanceof \Swift_TransportException) {
 				$this->_jsonResponse['status'] = 'error';
 				$this->_jsonResponse['data'] = $result->getMessage();
+				return;
 			}
 		}
 
