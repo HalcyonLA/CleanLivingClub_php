@@ -47,7 +47,7 @@ $config = [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.gmail.com',
                 'username' => 'hclmaxim@gmail.com',
-                'password' => 'Max163359157',
+                'password' => 'qebetkldzbpmvqqu',
                 'port' => '587',
                 'encryption' => 'tls',
             ],
