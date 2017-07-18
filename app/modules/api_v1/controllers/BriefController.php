@@ -70,7 +70,11 @@ class BriefController extends ApiController
 		}
 		$item->save();
 		if ($item->sendToEmail == 1) {
-			$item->sendToEmail();
+			$result = $item->sendToEmail();
+			if ($result instanceof \Swift_TransportException) {
+				$this->_jsonResponse['status'] = 'error';
+				$this->_jsonResponse['data'] = $result->getMessage();
+			}
 		}
 
 		$this->_jsonResponse['status'] = 'ok';

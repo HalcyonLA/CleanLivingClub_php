@@ -140,6 +140,6 @@ class Brief extends \yii\db\ActiveRecord
 	    $toMail = $this->email;
 	    $data = $this->prepareToEmail();
 
-	    $mailerHelper->compose($fromMail, $fromName, $toMail, $data, MailerHelper::TYPE_FORM_ECHO)->send();
+	    return $mailerHelper->compose($fromMail, $fromName, $toMail, $data, MailerHelper::TYPE_FORM_ECHO)->send();
     }
 }
