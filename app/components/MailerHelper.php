@@ -97,7 +97,7 @@ class MailerHelper extends Component
 
 		try {
 			return $mail->send();
-		} catch (Exception $e) {
+		} catch (\Swift_TransportException $e) {
 			return $e;
 		}
 
