@@ -110,15 +110,20 @@ class Brief extends \yii\db\ActiveRecord
     public function prepareToEmail()
     {
     	$data = [];
-    	$attributes = $this->getAttributes(null, ['id', 'created', 'sendToEmail']);
+    	$attributes = $this->getAttributes(null, ['id', 'userId', 'created', 'sendToEmail']);
 
     	foreach ($this->attributeLabels() as $key=>$name) {
     		if (!array_key_exists($key, $attributes)) continue;
 
     		if ($key == 'startMealDeliveryDate') {
-    			$data[] = [
-    				'q' => $name,
-				    'a' => date("m/d/Y", strtotime($attributes[$key]))
+			    $data[] = [
+				    'q' => $name,
+				    'a' => date( "m/d/Y", strtotime( $attributes[ $key ] ) )
+			    ];
+		    } else if ($key == 'payDeposit') {
+			    $data[] = [
+				    'q' => $name,
+				    'a' => ($attributes[$key] == 0) ? 'Yes' : 'No'
 			    ];
 		    } else {
 			    $data[] = [
